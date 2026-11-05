@@ -1,1 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Havy Technologies | We Build Websites That Grow Your Business</title>
+  <meta name="description" content="Havy Technologies is a modern web design and development company crafting high-converting websites for schools, restaurants, businesses, and e-commerce brands." />
+  <meta name="keywords" content="Havy Technologies, web design, web development, school website, restaurant website, e-commerce, business website" />
+  <meta name="author" content="Havy Technologies" />
+
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Havy Technologies | We Build Websites That Grow Your Business" />
+  <meta property="og:description" content="Fast, mobile-first, and SEO-ready websites tailored to grow your brand. Chat with us on WhatsApp for a free quote." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:url" content="https://havytechnologies.com" />
+  <meta name="theme-color" content="#04183A" />
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================
+       1. CSS VARIABLES & RESET
+       ========================================== */
+    :root {
+      
+      --bg-cornsilk-dark: #F5E8C0;
+      --navy: #04183A;
+      --navy-light: #0A2654;
+      --sky: #05ADEE;
+      --sky-dark: #038BC2;
+      --sky-soft: rgba(5, 173, 238, 0.12);
+      --white: #FFFFFF;
+      --text-main: #04183A;
+      --text-muted: #42526E;
+      --border-soft: rgba(4, 24, 58, 0.1);
+      --whatsapp: #25D366;
+      --whatsapp-dark: #1EBE5D;
+      --danger: #D93025;
+      --success: #1E8E3E;
+      --shadow-sm: 0 6px 18px rgba(4, 24, 58, 0.06);
+      --shadow-md: 0 14px 34px rgba(4, 24, 58, 0.1);
+      --shadow-lg: 0 20px 44px rgba(4, 24, 58, 0.16);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --max-width: 1200px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-cornsilk);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    /* ==========================================
+       2. REUSABLE LAYOUT & TYPOGRAPHY
+       ========================================== */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sky-soft);
+      color: var(--navy);
+      border: 1px solid rgba(5, 173, 238, 0.35);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title span {
+      color: var(--sky);
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .btn-primary {
+      background-color: var(--navy);
+      color: var(--white);
+      box-shadow: 0 6px 16px rgba(4, 24, 58, 0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--sky);
+      color: var(--navy);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(5, 173, 238, 0.32);
+    }
+
+    .btn-sky {
+      background-color: var(--sky);
+      color: var(--navy);
+      font-weight: 700;
+      box-shadow: 0 6px 16px rgba(5, 173, 238, 0.25);
+    }
+
+    .btn-sky:hover {
+      background-color: var(--white);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--navy);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll Fade-in Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       3. STICKY NAVBAR
+       ========================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 78px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--navy);
+    }
+
+    .brand img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .brand-text span {
+      color: var(--sky);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--navy);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: var(--sky);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--sky-dark);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    /* Hamburger Button */
+    .menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      border: 1px solid var(--border-soft);
+      color: var(--navy);
+      cursor: pointer;
+    }
+
+    .menu-toggle svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu {
+      display: none;
+      background: var(--white);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.5rem 0.25rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .mobile-menu a:hover {
+      color: var(--sky);
+    }
+
+    .mobile-menu .btn {
+      width: 100%;
+    }
+
+    /* ==========================================
+       4. HERO SECTION
+       ========================================== */
+    .hero {
+      padding: 3.5rem 0 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      text-align: left;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--white);
+      color: var(--navy);
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(5, 173, 238, 0.3);
+    }
+
+    .hero-tagline .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sky);
+      box-shadow: 0 0 0 4px rgba(5, 173, 238, 0.2);
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5.2vw, 3.35rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--navy);
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-title .highlight {
+      color: var(--sky);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-subtext {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 1.9rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-soft);
+      max-width: 500px;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .stat-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Hero Tech Mockup Card */
+    .hero-visual {
+      position: relative;
+    }
+
+    .browser-mockup {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(5, 173, 238, 0.3);
+      position: relative;
+    }
+
+    .browser-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.9rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .browser-dots span:nth-child(1) { background: #FF5F56; }
+    .browser-dots span:nth-child(2) { background: #FFBD2E; }
+    .browser-dots span:nth-child(3) { background: #27C93F; }
+
+    .browser-url {
+      background: rgba(255, 255, 255, 0.08);
+      color: #B8C7E0;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.85rem;
+      border-radius: 999px;
+    }
+
+    .mockup-screen {
+      background: linear-gradient(145deg, #072252, #04183A);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      border: 1px solid rgba(5, 173, 238, 0.2);
+    }
+
+    .mockup-badge {
+      display: inline-block;
+      background: rgba(5, 173, 238, 0.2);
+      color: var(--sky);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      margin-bottom: 0.65rem;
+    }
+
+    .mockup-screen h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .mockup-screen p {
+      font-size: 0.83rem;
+      color: #BFD0EA;
+      margin-bottom: 1.1rem;
+    }
+
+    .mockup-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .metric-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.85rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .metric-box strong {
+      display: block;
+      color: var(--sky);
+      font-size: 1.15rem;
+    }
+
+    .metric-box span {
+      font-size: 0.75rem;
+      color: #D2DDF0;
+    }
+
+    /* ==========================================
+       5. SERVICES SECTION
+       ========================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.35rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(4, 24, 58, 0.06);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--sky);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--sky-soft);
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.15rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--navy);
+      color: var(--sky);
+    }
+
+    .service-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .service-card h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.55rem;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .service-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--sky-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* ==========================================
+       6. OUR WORK (PORTFOLIO DEMO SHOWCASE)
+       ========================================== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(4, 24, 58, 0.07);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-thumb {
+      position: relative;
+      height: 210px;
+      background: var(--navy);
+      overflow: hidden;
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-thumb img {
+      transform: scale(1.05);
+    }
+
+    .project-category {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(4, 24, 58, 0.88);
+      color: var(--sky);
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+    }
+
+    .project-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-body h3 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+    }
+
+    .project-body p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.35rem;
+      flex-grow: 1;
+    }
+
+    .project-body .btn {
+      width: 100%;
+    }
+
+    /* ==========================================
+       7. WHY CHOOSE US (DARK NAVY SECTION)
+       ========================================== */
+    .why-us {
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+    }
+
+    .why-us .section-badge {
+      background: rgba(5, 173, 238, 0.16);
+      color: var(--sky);
+      border-color: rgba(5, 173, 238, 0.4);
+    }
+
+    .why-us .section-title {
+      color: var(--white);
+    }
+
+    .why-us .section-subtitle {
+      color: #C5D4EB;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.35rem;
+    }
+
+    .why-card {
+      background: var(--white);
+      color: var(--navy);
+      padding: 1.7rem 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border-bottom: 4px solid var(--sky);
+    }
+
+    .why-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--sky-soft);
+      color: var(--sky-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .why-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .why-card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 0.45rem;
+      color: var(--navy);
+    }
+
+    .why-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================
+       8. PROCESS SECTION
+       ========================================== */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.35rem;
+      position: relative;
+    }
+
+    .process-step {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(4, 24, 58, 0.07);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .process-step:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--sky);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--sky);
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(4, 24, 58, 0.2);
+    }
+
+    .process-step h3 {
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+    }
+
+    .process-step p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================
+       9. ENQUIRY FORM SECTION
+       ========================================== */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact-info-card {
+      background: var(--navy);
+      color: var(--white);
+      padding: 2rem 1.6rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-info-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .contact-info-card p {
+      color: #C5D4EB;
+      font-size: 0.94rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .contact-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .contact-list-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(5, 173, 238, 0.18);
+      color: var(--sky);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-list-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-list-item span {
+      display: block;
+      font-size: 0.78rem;
+      color: #9FB5D6;
+    }
+
+    .contact-list-item strong,
+    .contact-list-item a {
+      font-size: 0.95rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .contact-list-item a:hover {
+      color: var(--sky);
+    }
+
+    .form-card {
+      background: var(--white);
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(4, 24, 58, 0.08);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.15rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .required-star {
+      color: var(--danger);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.78rem 0.95rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid rgba(4, 24, 58, 0.18);
+      background: #FCFBF7;
+      color: var(--navy);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--sky);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(5, 173, 238, 0.18);
+    }
+
+    .form-control.invalid {
+      border-color: var(--danger);
+      background: #FFF8F7;
+    }
+
+    textarea.form-control {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .error-msg {
+      display: none;
+      font-size: 0.78rem;
+      color: var(--danger);
+      font-weight: 500;
+    }
+
+    .form-group.has-error .error-msg {
+      display: block;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(30, 142, 62, 0.12);
+      color: var(--success);
+      border: 1px solid rgba(30, 142, 62, 0.3);
+    }
+
+    /* ==========================================
+       10. FOOTER
+       ========================================== */
+    .footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand img {
+      height: 54px;
+      width: auto;
+      background: var(--white);
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      color: #C5D4EB;
+      font-size: 0.92rem;
+      max-width: 360px;
+    }
+
+    .footer-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--sky);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #D9E3F2;
+      font-size: 0.92rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--sky);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9FB5D6;
+    }
+
+    /* ==========================================
+       11. FLOATING WHATSAPP BUTTON
+       ========================================== */
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: var(--whatsapp);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+      z-index: 1100;
+      animation: waPulse 2.2s infinite;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: var(--whatsapp-dark);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    @keyframes waPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* ==========================================
+       12. RESPONSIVE BREAKPOINTS (MOBILE-FIRST)
+       ========================================== */
+    @media (min-width: 640px) {
+      .services-grid,
+      .portfolio-grid,
+      .why-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-group.full-width {
+        grid-column: span 2;
+      }
+    }
+
+    @media (min-width: 960px) {
+      section {
+        padding: 5.5rem 0;
+      }
+
+      .menu-toggle,
+      .mobile-menu {
+        display: none !important;
+      }
+
+      .nav-links {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: inline-flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .why-grid,
+      .process-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       1. STICKY NAVBAR
+       ========================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand" aria-label="Havy Technologies Home">
+        <img src="logo.jpg" alt="Havy Technologies Logo" />
+        <span class="brand-text">HAVY <span>TECHNOLOGIES</span></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary nav-cta">Get a Free Quote</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#home" class="mobile-link">Home</a></li>
+        <li><a href="#services" class="mobile-link">Services</a></li>
+        <li><a href="#work" class="mobile-link">Our Work</a></li>
+        <li><a href="#process" class="mobile-link">Process</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary mobile-link">Get a Free Quote</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         2. HERO SECTION
+         ========================================== -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-tagline">
+            <span class="dot"></span>
+            <span>Web Design &amp; Development Partner</span>
+          </div>
+          <h1 class="hero-title">
+            We build websites that <span class="highlight">grow your business.</span>
+          </h1>
+          <p class="hero-subtext">
+            From schools and restaurants to ambitious businesses and online stores, Havy Technologies crafts lightning-fast, mobile-first websites designed to turn visitors into customers.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">
+              <span>View Our Work</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#" id="heroWhatsappBtn" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.16C10.57 20.16 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.98 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.32 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.05 20.16Z"/>
+              </svg>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>100%</strong>
+              <span>Mobile Responsive</span>
+            </div>
+            <div class="stat-item">
+              <strong>Fast</strong>
+              <span>Turnaround Time</span>
+            </div>
+            <div class="stat-item">
+              <strong>24/7</strong>
+              <span>WhatsApp Support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="browser-mockup">
+            <div class="browser-top">
+              <div class="browser-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="browser-url">https://havytechnologies.com</div>
+            </div>
+            <div class="mockup-screen">
+              <span class="mockup-badge">PERFORMANCE-READY</span>
+              <h3>Engineered for Speed, SEO &amp; Conversions</h3>
+              <p>Every website we ship is custom-tailored to your brand identity, optimized for Google rankings, and effortless for your customers to use.</p>
+              <div class="mockup-metrics">
+                <div class="metric-box">
+                  <strong>99+</strong>
+                  <span>Speed Optimization</span>
+                </div>
+                <div class="metric-box">
+                  <strong>SEO</strong>
+                  <span>Search Engine Ready</span>
+                </div>
+                <div class="metric-box">
+                  <strong>SSL</strong>
+                  <span>Secure Architecture</span>
+                </div>
+                <div class="metric-box">
+                  <strong>UI/UX</strong>
+                  <span>Modern Clean Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. SERVICES SECTION
+         ========================================== -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">What We Do</span>
+          <h2 class="section-title">Web Solutions Tailored for <span>Every Industry</span></h2>
+          <p class="section-subtitle">Whether you are launching a new venture or upgrading an outdated portal, we build digital experiences that deliver measurable growth.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- 1. School/College Websites -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <h3>School &amp; College Websites</h3>
+              <p>Admissions portals, notice boards, photo galleries, academic calendars, and parent-friendly information hubs.</p>
+            </div>
+            <a href="#contact" class="service-tag">Enquire Now &rarr;</a>
+          </article>
+
+          <!-- 2. Restaurant Websites -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                  <path d="M7 2v20"/>
+                  <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+                </svg>
+              </div>
+              <h3>Restaurant Websites</h3>
+              <p>Interactive digital menus, QR menu integration, table reservation forms, and direct WhatsApp food ordering.</p>
+            </div>
+            <a href="#contact" class="service-tag">Enquire Now &rarr;</a>
+          </article>
+
+          <!-- 3. Business Websites -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+              </div>
+              <h3>Business Websites</h3>
+              <p>High-trust corporate websites for agencies, clinics, consultants, and local enterprises looking to win more leads.</p>
+            </div>
+            <a href="#contact" class="service-tag">Enquire Now &rarr;</a>
+          </article>
+
+          <!-- 4. Portfolio Sites -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <h3>Portfolio Sites</h3>
+              <p>Sleek personal websites for architects, photographers, creators, and freelancers to showcase their best work.</p>
+            </div>
+            <a href="#contact" class="service-tag">Enquire Now &rarr;</a>
+          </article>
+
+          <!-- 5. E-commerce -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"/>
+                  <circle cx="20" cy="21" r="1"/>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                </svg>
+              </div>
+              <h3>E-commerce Stores</h3>
+              <p>Product catalogs, cart &amp; checkout flows, payment gateway setup, and inventory-ready online storefronts.</p>
+            </div>
+            <a href="#contact" class="service-tag">Enquire Now &rarr;</a>
+          </article>
+
+          <!-- 6. Landing Pages -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <h3>Landing Pages</h3>
+              <p>Conversion-focused single-page sites built specifically for Google Ads, Meta campaigns, and product launches.</p>
+            </div>
+            <a href="#contact" class="service-tag">Enquire Now &rarr;</a>
+          </article>
+
+          <!-- 7. Website Maintenance -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <h3>Website Maintenance</h3>
+              <p>Regular content updates, speed tuning, security monitoring, backups, and ongoing technical care.</p>
+            </div>
+            <a href="#contact" class="service-tag">Enquire Now &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4. OUR WORK (PORTFOLIO SHOWCASE)
+         ========================================== -->
+    <section id="work">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Demo Showcase</span>
+          <h2 class="section-title">Explore Our <span>Live Demos</span></h2>
+          <p class="section-subtitle">Click through our ready-to-experience concept builds to see the design quality and speed we bring to every client project.</p>
+        </div>
+
+        <!-- Populated dynamically from the JavaScript PROJECTS array -->
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. WHY CHOOSE US
+         ========================================== -->
+    <section class="why-us" id="why-us">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Why Havy Technologies</span>
+          <h2 class="section-title">Built for Results, <span>Backed by Care</span></h2>
+          <p class="section-subtitle">We combine agency-grade engineering with transparent pricing and direct founder-level communication.</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>Streamlined workflows that take your website from concept to live launch in days, not months.</p>
+          </div>
+
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3>Affordable Pricing</h3>
+            <p>Clear, honest packages for startups, schools, and local businesses with zero hidden charges.</p>
+          </div>
+
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                <line x1="12" y1="18" x2="12.01" y2="18"/>
+              </svg>
+            </div>
+            <h3>100% Mobile-Friendly</h3>
+            <p>Designed mobile-first so your site looks sharp and loads fast on every smartphone, tablet, and desktop.</p>
+          </div>
+
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </div>
+            <h3>Direct WhatsApp Support</h3>
+            <p>Skip long ticket queues—chat directly with our team on WhatsApp whenever you need updates or help.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         6. PROCESS SECTION
+         ========================================== -->
+    <section id="process">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">How We Work</span>
+          <h2 class="section-title">From Idea to Launch in <span>4 Simple Steps</span></h2>
+          <p class="section-subtitle">A frictionless, collaborative process designed to get your business online without technical headaches.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <div class="step-number">01</div>
+            <h3>Discuss on WhatsApp</h3>
+            <p>Share your business goals, reference sites, and feature requirements in a quick WhatsApp chat or call.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <div class="step-number">02</div>
+            <h3>Design</h3>
+            <p>We craft a clean, modern layout matching your brand colors, typography, and customer journey.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <div class="step-number">03</div>
+            <h3>Develop</h3>
+            <p>We code a fast, mobile-first, SEO-friendly website and share a live preview link for your feedback.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <div class="step-number">04</div>
+            <h3>Launch</h3>
+            <p>After final testing and approval, we connect your domain, configure SSL, and take your website live.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         7. ENQUIRY FORM SECTION
+         ========================================== -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Get In Touch</span>
+          <h2 class="section-title">Request Your <span>Free Website Quote</span></h2>
+          <p class="section-subtitle">Fill out the details below and your enquiry will open directly in WhatsApp for an instant response from our team.</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <aside class="contact-info-card reveal">
+            <h3>Let’s Build Something Great Together</h3>
+            <p>Have questions about pricing, timelines, or custom features? Reach out directly—we typically respond within a few minutes.</p>
+
+            <div class="contact-list">
+              <div class="contact-list-item">
+                <div class="contact-list-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span>WhatsApp / Phone</span>
+                  <a href="#" id="contactWhatsappLink" target="_blank" rel="noopener noreferrer">+91 9824160664</a>
+                </div>
+              </div>
+
+              <div class="contact-list-item">
+                <div class="contact-list-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div>
+                  <span>Email Address</span>
+                  <a href="mailto:hello@havytechnologies.com">hello@havytechnologies.com</a>
+                </div>
+              </div>
+
+              <div class="contact-list-item">
+                <div class="contact-list-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <span>Working Hours</span>
+                  <strong>Mon – Sat: 9:30 AM – 8:00 PM</strong>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <div class="form-card reveal">
+            <form id="enquiryForm" novalidate>
+              <div class="form-grid">
+                <!-- Full Name -->
+                <div class="form-group" id="groupName">
+                  <label for="fullName">Full Name <span class="required-star">*</span></label>
+                  <input type="text" id="fullName" class="form-control" placeholder="e.g. Rahul Sharma" required />
+                  <span class="error-msg">Please enter your full name.</span>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group" id="groupPhone">
+                  <label for="phone">Phone / WhatsApp Number <span class="required-star">*</span></label>
+                  <input type="tel" id="phone" class="form-control" placeholder="e.g. 9876543210" required />
+                  <span class="error-msg">Please enter a valid 10–15 digit phone number.</span>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group" id="groupEmail">
+                  <label for="email">Email Address (Optional)</label>
+                  <input type="email" id="email" class="form-control" placeholder="e.g. rahul@business.com" />
+                  <span class="error-msg">Please enter a valid email address.</span>
+                </div>
+
+                <!-- Business / Organization Name -->
+                <div class="form-group">
+                  <label for="business">Business / Organization Name</label>
+                  <input type="text" id="business" class="form-control" placeholder="e.g. Apex International School" />
+                </div>
+
+                <!-- Type of Website -->
+                <div class="form-group">
+                  <label for="websiteType">Type of Website</label>
+                  <select id="websiteType" class="form-control">
+                    <option value="School/College">School / College</option>
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="Business" selected>Business</option>
+                    <option value="E-commerce">E-commerce</option>
+                    <option value="Portfolio">Portfolio</option>
+                    <option value="Landing Page">Landing Page</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <!-- Budget Range -->
+                <div class="form-group">
+                  <label for="budget">Budget Range</label>
+                  <select id="budget" class="form-control">
+                    <option value="Under ₹10,000">Under ₹10,000</option>
+                    <option value="₹10,000 – ₹25,000" selected>₹10,000 – ₹25,000</option>
+                    <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option>
+                    <option value="₹50,000+">₹50,000+</option>
+                    <option value="Not Sure Yet">Not Sure Yet</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group full-width">
+                  <label for="message">Project Details / Message</label>
+                  <textarea id="message" class="form-control" placeholder="Tell us briefly about your project, pages needed, or any reference websites..."></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2Z"/>
+                    </svg>
+                    <span>Send Enquiry on WhatsApp</span>
+                  </button>
+                  <div class="form-status" id="formStatus" role="status" aria-live="polite">
+                    Redirecting you to WhatsApp…
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       8. FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.jpg" alt="Havy Technologies Logo" loading="lazy" />
+          <p>We build websites that grow your business. Modern, mobile-first web design and development for schools, restaurants, and growing brands.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Our Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Get a Free Quote</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact Us</h4>
+          <ul class="footer-links">
+            <li><a href="#" id="footerWhatsappLink" target="_blank" rel="noopener noreferrer">WhatsApp: +91 XXXXXXXXXX</a></li>
+            <li><a href="mailto:hello@havytechnologies.com">Email: hello@havytechnologies.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Havy Technologies. All rights reserved.</p>
+        <p>Designed &amp; Developed by Havy Technologies</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       9. FLOATING WHATSAPP BUTTON
+       ========================================== -->
+  <a
+    href="#"
+    id="floatingWhatsappBtn"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Havy Technologies on WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.16C10.57 20.16 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.98 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.32 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.05 20.16ZM16.56 13.99C16.31 13.87 15.09 13.27 14.87 13.18C14.64 13.1 14.48 13.06 14.31 13.31C14.15 13.56 13.67 14.12 13.53 14.28C13.38 14.45 13.24 14.47 12.99 14.35C12.74 14.22 11.94 13.96 11 13.12C10.26 12.46 9.77 11.65 9.62 11.4C9.48 11.15 9.6 11.02 9.73 10.89C9.84 10.78 9.98 10.6 10.1 10.46C10.22 10.31 10.27 10.21 10.35 10.04C10.43 9.88 10.39 9.73 10.33 9.61C10.27 9.48 9.77 8.26 9.57 7.76C9.37 7.28 9.16 7.35 9.01 7.34C8.87 7.33 8.7 7.33 8.54 7.33C8.37 7.33 8.1 7.39 7.88 7.64C7.65 7.89 7.01 8.49 7.01 9.71C7.01 10.93 7.9 12.11 8.02 12.27C8.15 12.44 9.77 14.94 12.25 16.01C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.03 14.27C16.97 14.16 16.81 14.11 16.56 13.99Z"/>
+    </svg>
+  </a>
+
+  <!-- ==========================================
+       10. JAVASCRIPT
+       ========================================== -->
+  <script>
+    // ==========================================
+    // CONFIGURATION
+    // ==========================================
+    const WHATSAPP_NUMBER = "919824160664"; // Country code + number, no '+' or spaces
+
+    // Demo Showcase Projects Array (Edit or add more items here)
+    const PROJECTS = [
+      {
+        name: "School Website",
+        category: "Education Portal",
+        description: "Modern academic website featuring online admission forms, notice board, faculty directory, and campus gallery.",
+        url: "https://example.com/school-demo",
+        accent: "#05ADEE"
+      },
+      {
+        name: "Restaurant Website",
+        category: "Food & Dining",
+        description: "Appetizing digital storefront with interactive menu categories, chef specials, table booking, and WhatsApp ordering.",
+        url: "https://example.com/restaurant-demo",
+        accent: "#25D366"
+      },
+      {
+        name: "Business Website",
+        category: "Corporate & Services",
+        description: "High-converting corporate presence with service breakdowns, client testimonials, and instant quote capture.",
+        url: "https://example.com/business-demo",
+        accent: "#38BDF8"
+      },
+      {
+        name: "E-Commerce Store",
+        category: "Online Retail",
+        description: "Fast product catalog with category filters, promotional banners, smooth cart drawer, and mobile checkout.",
+        url: "https://example.com/ecommerce-demo",
+        accent: "#60A5FA"
+      }
+    ];
+
+    // Generate clean inline SVG data URL placeholder for project screenshots
+    function createPlaceholderThumb(title, category, accentColor) {
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#04183A"/>
+              <stop offset="100%" stop-color="#0B2E6B"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="360" fill="url(#bg)"/>
+          <rect x="36" y="34" width="528" height="292" rx="14" fill="#07214D" stroke="${accentColor}" stroke-opacity="0.45" stroke-width="2"/>
+          <circle cx="62" cy="58" r="6" fill="#FF5F56"/>
+          <circle cx="82" cy="58" r="6" fill="#FFBD2E"/>
+          <circle cx="102" cy="58" r="6" fill="#27C93F"/>
+          <rect x="64" y="96" width="180" height="14" rx="7" fill="${accentColor}" opacity="0.85"/>
+          <rect x="64" y="124" width="320" height="24" rx="6" fill="#FFFFFF" opacity="0.9"/>
+          <rect x="64" y="160" width="260" height="12" rx="6" fill="#9FB5D6" opacity="0.6"/>
+          <rect x="64" y="198" width="120" height="36" rx="8" fill="${accentColor}"/>
+          <rect x="410" y="100" width="120" height="136" rx="10" fill="#04183A" stroke="${accentColor}" stroke-opacity="0.35"/>
+          <text x="64" y="285" fill="#FFF6DA" font-family="Poppins, sans-serif" font-size="22" font-weight="700">${title}</text>
+        </svg>
+      `;
+      return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg.trim());
+    }
+
+    // ==========================================
+    // RENDER PORTFOLIO CARDS
+    // ==========================================
+    const portfolioGrid = document.getElementById("portfolioGrid");
+
+    function renderPortfolio() {
+      if (!portfolioGrid) return;
+      portfolioGrid.innerHTML = PROJECTS.map((project) => {
+        const thumbSrc = project.image || createPlaceholderThumb(project.name, project.category, project.accent || "#05ADEE");
+        return `
+          <article class="project-card reveal">
+            <div class="project-thumb">
+              <img src="${thumbSrc}" alt="${project.name} Screenshot Preview" loading="lazy" />
+              <span class="project-category">${project.category || "Live Demo"}</span>
+            </div>
+            <div class="project-body">
+              <h3>${project.name}</h3>
+              <p>${project.description}</p>
+              <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span>View Live Demo</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    renderPortfolio();
+
+    // ==========================================
+    // WHATSAPP LINKS INITIALIZATION
+    // ==========================================
+    const defaultWaText = "Hi%20Havy%20Technologies%2C%20I%20want%20to%20build%20a%20website";
+    const defaultWaUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${defaultWaText}`;
+
+    const floatingWhatsappBtn = document.getElementById("floatingWhatsappBtn");
+    const heroWhatsappBtn = document.getElementById("heroWhatsappBtn");
+    const contactWhatsappLink = document.getElementById("contactWhatsappLink");
+    const footerWhatsappLink = document.getElementById("footerWhatsappLink");
+
+    if (floatingWhatsappBtn) floatingWhatsappBtn.href = defaultWaUrl;
+    if (heroWhatsappBtn) heroWhatsappBtn.href = defaultWaUrl;
+    if (contactWhatsappLink) {
+      contactWhatsappLink.href = defaultWaUrl;
+      contactWhatsappLink.textContent = `+${WHATSAPP_NUMBER}`;
+    }
+    if (footerWhatsappLink) {
+      footerWhatsappLink.href = defaultWaUrl;
+      footerWhatsappLink.textContent = `WhatsApp: +${WHATSAPP_NUMBER}`;
+    }
+
+    // ==========================================
+    // MOBILE HAMBURGER MENU & STICKY NAVBAR
+    // ==========================================
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navbar = document.getElementById("navbar");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 16) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // ==========================================
+    // ENQUIRY FORM VALIDATION & WHATSAPP SUBMIT
+    // ==========================================
+    const enquiryForm = document.getElementById("enquiryForm");
+    const fullNameInput = document.getElementById("fullName");
+    const phoneInput = document.getElementById("phone");
+    const emailInput = document.getElementById("email");
+    const businessInput = document.getElementById("business");
+    const websiteTypeInput = document.getElementById("websiteType");
+    const budgetInput = document.getElementById("budget");
+    const messageInput = document.getElementById("message");
+    const formStatus = document.getElementById("formStatus");
+
+    function setFieldError(groupId, inputEl, hasError) {
+      const group = document.getElementById(groupId);
+      if (!group || !inputEl) return;
+      if (hasError) {
+        group.classList.add("has-error");
+        inputEl.classList.add("invalid");
+      } else {
+        group.classList.remove("has-error");
+        inputEl.classList.remove("invalid");
+      }
+    }
+
+    function validatePhone(value) {
+      const cleaned = value.replace(/[\s\-()]/g, "");
+      return /^\+?[0-9]{10,15}$/.test(cleaned);
+    }
+
+    function validateEmail(value) {
+      if (!value) return true; // optional field
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    [fullNameInput, phoneInput, emailInput].forEach((input) => {
+      if (!input) return;
+      input.addEventListener("input", () => {
+        input.classList.remove("invalid");
+        if (input.parentElement) input.parentElement.classList.remove("has-error");
+      });
+    });
+
+    if (enquiryForm) {
+      enquiryForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const nameVal = fullNameInput.value.trim();
+        const phoneVal = phoneInput.value.trim();
+        const emailVal = emailInput.value.trim();
+        const businessVal = businessInput.value.trim() || "N/A";
+        const websiteTypeVal = websiteTypeInput.value;
+        const budgetVal = budgetInput.value;
+        const messageVal = messageInput.value.trim() || "N/A";
+
+        let isValid = true;
+
+        if (!nameVal) {
+          setFieldError("groupName", fullNameInput, true);
+          isValid = false;
+        } else {
+          setFieldError("groupName", fullNameInput, false);
+        }
+
+        if (!validatePhone(phoneVal)) {
+          setFieldError("groupPhone", phoneInput, true);
+          isValid = false;
+        } else {
+          setFieldError("groupPhone", phoneInput, false);
+        }
+
+        if (!validateEmail(emailVal)) {
+          setFieldError("groupEmail", emailInput, true);
+          isValid = false;
+        } else {
+          setFieldError("groupEmail", emailInput, false);
+        }
+
+        if (!isValid) return;
+
+        const formattedMessage =
+`*New Website Enquiry – Havy Technologies*
+Name: ${nameVal}
+Phone: ${phoneVal}
+Email: ${emailVal || "N/A"}
+Business: ${businessVal}
+Website Type: ${websiteTypeVal}
+Budget: ${budgetVal}
+Message: ${messageVal}`;
+
+        const encodedMessage = encodeURIComponent(formattedMessage);
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+        formStatus.classList.add("success");
+
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+        setTimeout(() => {
+          enquiryForm.reset();
+          setTimeout(() => {
+            formStatus.classList.remove("success");
+          }, 3500);
+        }, 600);
+      });
+    }
+
+    // ==========================================
+    // SCROLL REVEAL OBSERVER & FOOTER YEAR
+    // ==========================================
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    const revealElements = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      revealElements.forEach((el) => observer.observe(el));
+    } else {
+      revealElements.forEach((el) => el.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
 
