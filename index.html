@@ -352,14 +352,23 @@
     }
     
 /* Fix mobile quote button text */
-.mobile-menu a,
-.mobile-menu .nav-cta {
+/* Mobile menu links */
+.mobile-menu a:not(.nav-cta) {
+    color: #071a38 !important;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Get a Free Quote button */
+.mobile-menu a.nav-cta {
     color: #ffffff !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    text-indent: 0 !important;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 1;
+    visibility: visible;
+    text-indent: 0;
 }
     /* ==========================================
        4. HERO SECTION
